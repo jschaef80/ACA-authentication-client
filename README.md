@@ -12,11 +12,11 @@ NOTE: notice the ":dev". Make sure you run the above command exactly as written
 ## Investigation
 Look at the auth route (`routes/auth`) and controller (`controllers/auth`). Notice the SignUp function and how we created a hash for the password. 
 
-### Part 1 - Signup
+### Part 1 - Signup √√√
 
 Once the application is running, sign up with a couple username/password combinations. Then navigate to your MongoDB Atlas database in the browser and look in the `auth` collection to see the users you just created.
 
-### Part 2 - Login
+### Part 2 - Login √√√
 
 Create a login route and a login controller function. On login, a `POST` request will be sent to `/auth/login` with the request body (you don't have to configure that part). See steps below:
 
@@ -28,7 +28,7 @@ If the user doesn't exist, return a 404 status code and the string: "user could 
 
 If done correctly, you should notice that when you login, you are redirected to the dashboard page
 
-### Part 3 - Maintaining state in the browser
+### Part 3 - Maintaining state in the browser √√√
 
 Notice that when you login, you are redirected to the dashboard page but when you refresh the page, the data is gone. Why?
 

@@ -42,9 +42,9 @@ class Login extends Component {
       return res.text()
     })
     .then(token => {
-      // create cookie here
+      document.cookie = `id_token=${token};max-age=60;`
       const payload = jwt.verify(token, 'secret')
-      return this.props.login(payload._doc)
+      return this.props.login(payload)
     })
     .catch(err => this.setState({ message: err.message }))
     .then(() => this.setState({ userName: '', password: '' }))

@@ -10,7 +10,12 @@ router.post('/signup', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-  // contents of login route
+  AuthController.Login(req.body)
+    .then(user => {
+      if (!user) return res.status(404).send('No User')
+      const token = jwt.sign(user.toJSON(), 'secret')
+      res.send(token)
+    })
 })
 
 module.exports = router
